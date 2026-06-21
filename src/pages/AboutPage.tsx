@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 import Button from '../components/ui/Button'
+import aboutImg from "../assets/80.jpg";
 
 export default function AboutPage() {
   const { t } = useLanguage()
@@ -65,16 +66,15 @@ export default function AboutPage() {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
                 
-                {/* Image */}
-                <img 
-                  src="/images/Screenshot 2025-10-15 104108.png"
-                  alt="Abubaker Sediq - About"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    // که عکس پیدا نشي، د fallback عکس وښایه
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600/3a86ff/ffffff?text=Abubaker+Sediq'
-                  }}
-                />
+               <img 
+  src={aboutImg}
+  alt="Abubaker Sediq - About"
+  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+  onError={(e) => {
+    (e.target as HTMLImageElement).src =
+      'https://via.placeholder.com/800x600/3a86ff/ffffff?text=Abubaker+Sediq'
+  }}
+/>
               </div>
             </motion.div>
           </div>

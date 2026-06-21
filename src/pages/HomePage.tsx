@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../contexts/LanguageContext'
 import Button from '../components/ui/Button'
+import aboutImg from "../assets/20231114_113313.jpg";
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -39,7 +40,7 @@ export default function HomePage() {
             initial={{ scale: 0.8, opacity: 0, rotateY: 90 }}
             animate={{ scale: 1, opacity: 1, rotateY: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
-            className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto mb-10"
+            className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] mx-auto mb-10"
           >
             {/* د عکس شاوخوا انیمیشن لرونکی حلقه */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#3a86ff] via-[#8338ec] to-[#ff006e] animate-spin-slow" style={{ padding: '3px' }}></div>
@@ -47,8 +48,8 @@ export default function HomePage() {
             {/* اصلي عکس */}
             <div className="absolute inset-[3px] rounded-full bg-white dark:bg-gray-900 overflow-hidden shadow-2xl">
               <img 
-                src="/images/20231114_113313.jpg"
-                alt="Abubaker Sediq"
+                 src={aboutImg}
+  alt="Abubaker Sediq - About"
                 className="w-full h-full object-cover object-center scale-105 hover:scale-110 transition-transform duration-500"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
